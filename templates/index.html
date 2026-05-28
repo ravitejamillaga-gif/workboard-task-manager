@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>📝 My Tasks</h1>
+        <a class="logout" href="/logout">Logout</a>
+    </div>
+
+    <div class="filters">
+        <a href="/">All</a>
+        <a href="/?filter=pending">Pending</a>
+        <a href="/?filter=completed">Completed</a>
+    </div>
+
+    <div class="search-box">
+        <form method="GET" action="/">
+            <input type="text" name="search" placeholder="Search tasks...">
+            <button class="btn">Search</button>
+        </form>
+    </div>
+
+    <div class="stats">
+        <div>Total: {{ total_tasks }}</div>
+        <div>Completed: {{ completed_tasks }}</div>
+        <div>Pending: {{ pending_tasks }}</div>
+    </div>
+
+    <form method="POST" action="/add" class="add-box">
+
+        <input type="text" name="task" placeholder="Enter task" required>
+        <input type="date" name="due_date">
+
+        <select name="priority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+
+        <button class="btn">Add</button>
+
+    </form>
+
+    <div class="task-list">
+
+        {% for task in tasks %}
+        <div class="card {{ task[5]|lower }} {% if task[3]=='Completed' %}done-card{% endif %}">
+
+            <h3 {% if task[3]=='Completed' %}class="done-text"{% endif %}>
+                {{ task[2] }}
+            </h3>
+
+            <p>Status: {{ task[3] }}</p>
+            <p>Due: {{ task[4] }}</p>
+            <p>Priority: {{ task[5] }}</p>
+
+            <div class="actions">
+
+                <a class="done" href="/complete/{{ task[0] }}">✔ Done</a>
+
+                <a class="edit" href="/edit/{{ task[0] }}">✏ Edit</a>
+
+                <a class="delete" href="/delete/{{ task[0] }}">🗑 Delete</a>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

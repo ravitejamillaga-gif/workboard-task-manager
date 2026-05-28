@@ -1,0 +1,295 @@
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    margin: 0;
+}
+
+/* ===== AUTH PAGES ===== */
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 320px;
+    text-align: center;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ===== LINKS ===== */
+.link {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 10px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* PRIMARY BUTTON */
+.primary {
+    background: #4CAF50;
+    color: white;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== HEADER (MY TASKS TITLE) ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 🟢 COLORED "MY TASKS" HEADING */
+.header h1 {
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* LOGOUT */
+.logout {
+    color: white;
+    background: #e53935;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ===== FILTERS ===== */
+.filters {
+    margin: 15px 0;
+}
+
+.filters a {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-right: 8px;
+    background: #e0e0e0;
+    color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.filters a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.search-box input:focus {
+    border-color: #4CAF50;
+}
+
+.search-box button {
+    background: #2196F3;
+    color: white;
+}
+
+/* ===== STATS ===== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stats div {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* ===== ADD TASK BOX ===== */
+.add-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.add-box input,
+.add-box select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* 🎯 PRIORITY DROPDOWN COLOR */
+.add-box select {
+    background: #f9f9f9;
+}
+
+.add-box button {
+    background: #ff9800;
+    color: white;
+}
+
+/* ===== TASK GRID ===== */
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+}
+
+/* TASK CARD */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* PRIORITY COLORS */
+.low { border-left: 5px solid green; }
+.medium { border-left: 5px solid orange; }
+.high { border-left: 5px solid red; }
+
+/* COMPLETED TASK */
+.done-card {
+    opacity: 0.7;
+    background: #e8ffe8;
+}
+
+.done-text {
+    text-decoration: line-through;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.actions a {
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.done {
+    color: #2e7d32;
+    background: #e8f5e9;
+}
+
+.edit {
+    color: #ef6c00;
+    background: #fff3e0;
+}
+
+.delete {
+    color: #c62828;
+    background: #ffebee;
+}
+
+.actions a:hover {
+    transform: scale(1.05);
+}
+
+/* ===== EDIT PAGE STYLING ===== */
+.edit-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* EDIT FORM BOX */
+.edit-form {
+    width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* EDIT INPUTS */
+.edit-form input,
+.edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* UPDATE BUTTON */
+.edit-form button {
+    width: 100%;
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-form button:hover {
+    opacity: 0.9;
+}
