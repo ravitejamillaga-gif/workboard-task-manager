@@ -216,7 +216,6 @@ def update(id):
     conn.close()
 
     return redirect('/')
-
 import os
 
 if __name__ == "__main__":
